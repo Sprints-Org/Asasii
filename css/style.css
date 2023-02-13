@@ -2,15 +2,71 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
 }
-li {
-    list-style: none;
-}
-header {
+
+.header {
     height: 6.25rem;
 }
 
-header > nav {
+.header .header-nav {
     font-weight: 500;
     font-size: 1rem;
     line-height: 1.5rem;
+}
+
+.header-nav ul,
+.header ul {
+    list-style: none;
+}
+
+.btn-mobile-nav {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: none;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+    display: none;
+}
+
+@media (max-width: 37em) {
+    .btn-mobile-nav {
+        display: block;
+        z-index: 1;
+    }
+    .header-nav {
+        background-color: rgba(255, 255, 255, 0.9);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(10px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        transform: translateX(100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease-in;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+    }
+    .header-nav ul {
+        flex-direction: column;
+        gap: 4.8rem;
+    }
+    .nav-open .header-nav {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    .nav-open .icon-mobile-nav[name="close-outline"] {
+        display: block;
+    }
+
+    .nav-open .icon-mobile-nav[name="menu-outline"] {
+        display: none;
+    }
 }
