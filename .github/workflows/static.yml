@@ -10,11 +10,11 @@ jobs:
 
     steps:
       # Checkout the `main` branch
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       # Install Node.js
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '16'
+          node-version: '14'
       # Install npm dependencies
       # (similar to npm install)
       - run: npm ci
@@ -22,7 +22,7 @@ jobs:
       - run: npm run build
 
       # Checkout the `app-challenge` branch
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: SP-8-product-details-page
           # Put the checked out files inside the `big-island-buses/heleon` folder
