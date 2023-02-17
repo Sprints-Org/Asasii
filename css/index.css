@@ -1,0 +1,9 @@
+.a-bottom-border{
+    border-width: 0px 0px 0.01rem;
+    border-radius: 0%;
+    border-color: black;
+    margin-bottom: 2rem;
+}
+.a-bottom-border:hover{
+    color: #B88E2F;
+}
