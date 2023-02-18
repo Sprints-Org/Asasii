@@ -168,6 +168,10 @@ input[type="number"]::-webkit-outer-spin-button {
     font-weight: 400;
 }
 
+.like i {
+    color: #ff0000;
+}
+
 @media (max-width: 37em) {
     .btn-mobile-nav {
         display: block;
