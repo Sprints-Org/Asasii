@@ -4,9 +4,9 @@
         $(".header").toggleClass("nav-open");
     });
     
-    [...$('.small-product-images img')].forEach(element => {
+    [...$('.product-images img')].forEach(element => {
         element.addEventListener("click", function () {
-            $('.large-img')[0].src = element.src;
+            $('.product-main-img img')[0].src = element.src;
         });
     });
     
