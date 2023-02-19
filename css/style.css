@@ -46,15 +46,14 @@
 }
 
 .product-header {
-    font-weight: 400;
     font-size: 2.63rem;
-    line-height: 3.94rem;
+    line-height: normal;
 }
 
 .price {
     font-weight: 500;
     font-size: 1.5rem;
-    line-height: 2.25rem;
+    line-height: normal;
     color: #9f9f9f;
 }
 
@@ -64,7 +63,7 @@
 .rating-count,
 .product-description {
     font-size: 0.81rem;
-    line-height: 1.25rem;
+    line-height: normal;
 }
 
 .primary-color {
@@ -79,7 +78,7 @@
 .color {
     font-weight: 400;
     font-size: 1.08rem;
-    line-height: 1.62rem;
+    line-height: normal;
     color: #9f9f9f;
 }
 
@@ -123,6 +122,8 @@
 
 .value-button {
     width: 40px;
+    border: none;
+    background: transparent;
 }
 
 .value-button:hover {
@@ -163,7 +164,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .detail-colon,
 .detail-value {
     font-size: 1rem;
-    line-height: 1.8rem;
+    line-height: normal;
     color: #9f9f9f;
     font-weight: 400;
 }
@@ -172,6 +173,47 @@ input[type="number"]::-webkit-outer-spin-button {
     color: #ff0000;
 }
 
+.product-information {
+    font-size: 1.5rem;
+    line-height: normal;
+}
+
+.product-information-header button,
+.product-information-description {
+    color: #9f9f9f;
+}
+
+.product-information-description {
+    font-size: 1rem;
+}
+
+.product-information-additional,
+.product-information-review {
+    display: none;
+}
+
+.review {
+    background-color: #b88e2f;
+    border-radius: 48px;
+}
+
+.review-rating {
+    min-height: 27px;
+}
+
+.user-img img {
+    border-radius: 50px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.product-information-review {
+    max-height: 300px;
+}
+
+.scroll-bar {
+    height: 200%;
+}
 @media (max-width: 37em) {
     .btn-mobile-nav {
         display: block;
