@@ -7,3 +7,30 @@
 .a-bottom-border:hover{
     color: #B88E2F;
 }
+
+.product-action{
+    display:none;
+  }
+  .product-action >a{
+    border-radius: 3rem;
+  }
+  .product-action >a:hover{
+    border-color: #B88E2F;
+    background-color:#B88E2F ;
+  }
+
+.product-card:hover .product-action{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+    opacity: 1;
+    margin-top: -7.5rem;
+    margin-left: 3rem;
+    gap: 0.5rem;
+}  
+.product-card:hover  img {
+    position: relative;
+    opacity: 0.5;
+}
