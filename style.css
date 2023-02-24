@@ -223,6 +223,32 @@ input[type="number"]::-webkit-outer-spin-button {
 .scroll-bar {
     height: 200%;
 }
+
+.paymentFeatures {
+    display: grid;
+    align-content: space-evenly;
+    grid-template-columns: auto auto auto;
+    gap: 4%;
+    width: 100%;
+    height: 300px;
+    margin-top: 40%;
+    background: #FAF4F4;
+    padding-left: 3%;
+   
+}
+.paymentFeatures h2{
+    font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 48px;
+}
+.paymentFeatures p{
+    font-style: normal;
+font-weight:400;
+font-size: 22px;
+line-height: 30px;
+color: #a5a4a4;
+}
 @media (max-width: 37em) {
     .btn-mobile-nav {
         display: block;
@@ -267,4 +293,5 @@ input[type="number"]::-webkit-outer-spin-button {
     .nav-open .icon-mobile-nav[name="menu-outline"] {
         display: none;
     }
+    .paymentFeatures{margin-top: 80vh;}
 }

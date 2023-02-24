@@ -23,7 +23,11 @@ grid-template-rows: 1fr auto;
 
 .product-total{margin-bottom: 18em;}
 @media (max-width: 37em){
-    .billing-details{display: grid;
-        grid-template-rows: 1fr;
+    .checkout{display: flex;
+        flex-wrap: wrap;
         }
+    
+}
+@media (max-width:40em) {
+    #place-order{margin-left: 12%;}
 }
