@@ -13,6 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { FeaturesComponent } from './components/layouts/features/features.component';
+import { ProductComponent } from './components/layouts/product/product.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     LoginComponent,
     AboutComponent,
     ProductDetailsComponent,
-    ProfileComponent
+    ProfileComponent,
+    FeaturesComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
