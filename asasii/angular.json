@@ -31,8 +31,7 @@
               "src/assets/css/reset.css",
               "src/assets/css/checkout.css",
               "src/assets/css/filterStyle.css"
-
-            ],
+             ],
             "scripts": [
               "src/assets/js/script.js",
               "src/assets/js/jquery-3.6.3.js",

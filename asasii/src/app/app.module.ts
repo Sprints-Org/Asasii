@@ -5,12 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app-comonent/app.component';
 import { HeaderComponent } from './components/layouts/header/header.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
+import { HomeComponentComponent } from './components/home-component/home-component.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { LoginComponent } from './components/login/login.component';
+import { AboutComponent } from './components/about/about.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponentComponent,
+    FilterComponent,
+    CartComponent,
+    CheckoutComponent,
+    LoginComponent,
+    AboutComponent,
+    ProductDetailsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
