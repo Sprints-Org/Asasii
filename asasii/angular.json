@@ -35,7 +35,9 @@
             "scripts": [
               "src/assets/js/script.js",
               "src/assets/js/jquery-3.6.3.js",
-              "src/assets/js/jquery-3.6.3.min.js"
+              "src/assets/js/jquery-3.6.3.min.js",
+              "src/assets/js/signin.js",
+              "src/assets/js/add-product.js"
 
             ]
           },
