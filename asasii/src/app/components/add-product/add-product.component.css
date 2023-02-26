@@ -20,14 +20,14 @@ h1 {
     font-weight: bold;
     font-size: 24px;
     margin: 0;
-    color:  #ecdcc8;
+    color:  #b88e2f;
 }
  
 button {
     border-radius: 20px;
-    border: 1px solid  #d5a782;
-    background-color:  #d5a782;
-    color: #FFFFFF;
+    border: 1px solid #fff9e5;
+  background-color: #fff9e5;
+  color: #b88e2f;
     font-size: 12px;
     font-weight: bold;
     padding: 12px 45px;
@@ -48,7 +48,7 @@ button:focus {
  
 button.ghost {
     background-color: transparent;
-    border-color: #FFFFFF;
+    border-color: #b88e2f;
 }
  
 form {
@@ -77,9 +77,12 @@ input {
             0 10px 10px rgba(0,0,0,0.22);
     position: relative;
     overflow: hidden;
-    width: 665px;
+    width: 80rem;
     max-width: 100%;
-    min-height: 400px;
+    min-height: 30rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    margin-left: 5rem;
 }
  
 .form-container-edit {
@@ -130,9 +133,9 @@ input {
 }
  
 .overlay-add {
-    background:  #d5a782;
-    background: -webkit-linear-gradient(to right,  #d5a782,  #d5a782);
-    background: linear-gradient(to right,  #d5a782,  #d5a782);
+    background:  #fff9e5;
+    background: -webkit-linear-gradient(to right,  #fff9e5,  #fff9e5);
+    background: linear-gradient(to right,  #fff9e5,  #fff9e5);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
