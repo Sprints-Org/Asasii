@@ -1,22 +1,26 @@
 <header class="container-fluid">
-    <nav class="header row justify-content-end align-items-center">
-        <button class="btn-mobile-nav col-6 col-sm-6 col-md-4">
-            <i data-feather="align-justify" class="icon-mobile-nav" name="menu-outline"></i>
-            <i data-feather="x" class="icon-mobile-nav mx-auto" name="close-outline"></i>
-        </button>
+    <nav class="header row justify-content-end align-items-center" >
         <div class="nav-bar col-6 col-sm-6 col-md-4">
             <ul class="list-inline d-flex my-auto justify-content-between">
-                <li class="list-inline-item">Home</li>
-                <li class="list-inline-item">Shop</li>
-                <li class="list-inline-item">About</li>
-                <li class="list-inline-item">Contact</li>
+                <li class="list-inline-item"><a class="button" routerLink="/home">Home</a></li>
+                <li class="list-inline-item"><a class="button" routerLink="/shop">Shop</a></li>
+                <li class="list-inline-item"><a class="button" routerLink="/about">About</a></li>
+                <li class="list-inline-item"><a class="button" routerLink="/cart">Cart</a></li>
+                <li class="list-inline-item"><a class="button" routerLink="/checkout">Checkout</a></li>
+                
             </ul>
         </div>
-        <ul class="list-inline col-6 col-sm-6 col-md-4 d-flex my-auto justify-content-evenly">
-            <li class="list-inline-item"><i class="fa-regular fa-user fa-xl"></i></li>
-            <li class="list-inline-item"><i class="fa-solid fa-magnifying-glass fa-xl"></i></li>
-            <li class="list-inline-item"><i class="fa-regular fa-heart fa-xl"></i></li>
-            <li class="list-inline-item"><i data-feather="shopping-cart"></i></li>
+        <ul class="list-inline col-6 col-sm-6 col-md-4 d-flex justify-content-end">
+            <li class="list-inline-item"><i class="fa-solid fa-cart-shopping fa-xl"></i></li>
+            <li class="list-inline-item">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-regular fa-user fa-xl"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-right">
+                    <li><a class="dropdown-item" routerLink="/login">Sign in</a></li>
+                    <li><a class="dropdown-item" routerLink="/login">Sign out</a></li>
+                  </ul> 
+            </li>
         </ul>
     </nav>
 </header>
