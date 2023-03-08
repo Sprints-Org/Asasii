@@ -12,7 +12,7 @@ export class ProductService {
   constructor(private httpClient: HttpClient) {}
 
   getProducts(): any {
-    return this.httpClient.get(`${environment.apiUrl}products`);
+    return this.httpClient.get(`${environment.apiUrl}product`);
   }
 
   

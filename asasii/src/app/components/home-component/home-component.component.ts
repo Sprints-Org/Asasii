@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component ,Input } from '@angular/core';
+import { Category } from 'src/app/interfaces/Category';
 
 @Component({
   selector: 'app-home-component',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-component.component.css']
 })
 export class HomeComponentComponent {
-
+  @Input() category: Category = {} as Category;
 }
