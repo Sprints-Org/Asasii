@@ -1,5 +1,5 @@
 
-import { Component,OnInit} from '@angular/core';
+import { Component,Input,OnInit} from '@angular/core';
 import { Category } from 'src/app/interfaces/Category';
 import { CategoryService } from 'src/app/services/category.service';
 import { Products } from 'src/app/interfaces/products';
@@ -13,14 +13,14 @@ import { ProductService } from 'src/app/services/product.service';
 })
  
   export class FilterComponent implements OnInit {
-    categories: Category[]=[] ;
+    @Input() categories: Category[]=[] ;
     products: Products[] = [];
     constructor(private categoryService: CategoryService,private productService:ProductService) {}
   
     ngOnInit() {
       this.categoryService.getCategories().subscribe((data: any) => {
         this.categories = data;
-        console.log(data.data);
+        console.log(data);
        
         
       }); 
@@ -28,7 +28,7 @@ import { ProductService } from 'src/app/services/product.service';
    
       this. productService.getProducts().subscribe((data:any) => {
         this.products = data;
-        console.log(data.data);
+        console.log(data);
       });
   }
 }
