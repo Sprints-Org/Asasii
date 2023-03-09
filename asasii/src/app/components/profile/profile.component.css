@@ -1,28 +1,47 @@
-.side-menu{
+.table {
     border-radius: 0;
     margin-top: 15rem;
-    margin-left: 5rem;
-}
-.side-menu > a{
-    width:25rem;
-    border-radius: 0;
-    background-color:  #f5f5f5;
-    border-width: 0px 0px 0px 0px;
+    margin-left: 12rem;
+    width: calc(100% - 5rem);
+    text-align: center;
+  }
+  
+  .table thead th {
+    background-color: #f5f5f5;
+    border: none;
+    border-bottom: 2px solid #dee2e6;
+    font-size: 1.25rem;
+    font-weight: 400;
     height: 3rem;
-}
-.side-menu > a:hover{
-    background-color:  #b88e2f;
+  }
+  
+  .table tbody td {
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 1rem;
+    font-weight: 400;
+    height: 3rem;
+  }
+  
+  .table tbody td:first-child {
+    width: 50%;
+  }
+  
+  .table tbody td:last-child {
+    width: 50%;
+  }
+  
+  .table tbody td.add,
+  .table tbody td.delete {
+    padding-right: 10px;
+  }
+  
+  .table tbody tr:hover td {
+    background-color: #b88e2f;
     color: white;
-
-}
-
-@media only screen and (max-width: 1000px) {
-    .side-menu{
-        margin-left: 0rem;
-    }
-    .side-menu > a{
-        width:11rem;
-        height: 3rem;
-    }   
-
-}
+  }
+  
+  .side-menu {
+    margin-left: 2rem;
+  }
+  

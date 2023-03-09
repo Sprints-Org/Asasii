@@ -16,6 +16,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FeaturesComponent } from './components/layouts/features/features.component';
 import { ProductComponent } from './components/layouts/product/product.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
+import { CartTableComponent } from './cart-table/cart-table.component';
+import { CartTotalComponent } from './components/cart-total/cart-total.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AddProductComponent } from './components/add-product/add-product.compon
     ProfileComponent,
     FeaturesComponent,
     ProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    CartTableComponent,
+    CartTotalComponent
   ],
   imports: [
     BrowserModule,
