@@ -59,12 +59,12 @@
     </div>
   </nav>
   <div class="product-menu" style="margin-bottom: 15rem ;">
-    <div class="product">
-      <img src="../../../assets/images/products/Asgaard sofa.png" />
-      <p class="product-name">asgard sofa</p>
-      <p class="product-price">250000 R,S</p>
+    <div class="product" *ngFor="let p of products; let i = index">
+      <div  class="col-lg-2 col-md-5 mb-3 product-card">
+        <app-product [product]="p"></app-product>
+      </div>
     </div>
-    <div class="product">
+    <!-- <div class="product">
       <img src="../../../assets/images/products/chair_1.png" />
       <p class="product-name">bella chair and table</p>
       <p class="product-price">30000 Rs</p>
@@ -118,7 +118,7 @@
       <img src="../../../assets/images/products/Round coffee table_color 2 1.png" />
       <p class="product-name"> Round coffee table color</p>
      <p class="product-price">30000 Rs</p>
-    </div>
+    </div> -->
   </div>
   <div class="paymentFeatures">
     <div >

@@ -13,7 +13,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
  
   export class FilterComponent implements OnInit {
-    @Input() categories: Category[]=[] ;
+    categories: Category[]=[] ;
     products: Products[] = [];
     constructor(private categoryService: CategoryService,private productService:ProductService) {}
   
