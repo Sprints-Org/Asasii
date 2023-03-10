@@ -17,6 +17,10 @@ import { FeaturesComponent } from './components/layouts/features/features.compon
 import { ProductComponent } from './components/layouts/product/product.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+// search module
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -33,13 +37,17 @@ import { HttpClientModule } from '@angular/common/http';
     ProfileComponent,
     FeaturesComponent,
     ProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    Ng2SearchPipeModule 
+
   ],
   providers: [],
   bootstrap: [AppComponent]

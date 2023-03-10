@@ -20,4 +20,8 @@ export class ProductService {
   addProduct(product: Products): void {
     this.cartProducts.push(product);
   }
+  getProductByCategory(category_name:string){
+    return this.httpClient.get(`${environment.apiUrl}category/${category_name}/products`);
+  }
+  
 }
