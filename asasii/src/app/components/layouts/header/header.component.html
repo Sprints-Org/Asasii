@@ -4,9 +4,9 @@
             <ul class="list-inline d-flex my-auto justify-content-between">
                 <li class="list-inline-item"><a class="button" routerLink="/home">Home</a></li>
                 <li class="list-inline-item"><a class="button" routerLink="/shop">Shop</a></li>
-                <li class="list-inline-item"><a class="button" routerLink="/about">About</a></li>
                 <li class="list-inline-item"><a class="button" routerLink="/cart">Cart</a></li>
                 <li class="list-inline-item"><a class="button" routerLink="/checkout">Checkout</a></li>
+                <li class="list-inline-item"><a class="button" routerLink="/about">About</a></li>
                 
             </ul>
         </div>
@@ -20,6 +20,10 @@
                     <li><a class="dropdown-item" routerLink="/login">Profile</a></li>
                     <li><a class="dropdown-item" routerLink="/login">Sign in</a></li>
                     <li><a class="dropdown-item" routerLink="/login">Sign out</a></li>
+    
+                    <!-- <li *ngIf="authService.getIsAuthenticated()" ><a class="dropdown-item" routerLink="/profile/${authService.id()}"> {{ authService.getName() }}</a></li>
+                    <li *ngIf="authService.getIsAuthenticated()" ><a class="dropdown-item" routerLink="/login">Sign in</a></li>
+                    <li *ngIf="authService.getIsAuthenticated()" ><a class="dropdown-item" routerLink="/signout">Sign out</a></li> -->
                   </ul> 
             </li>
         </ul>

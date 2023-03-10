@@ -22,6 +22,10 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AdminProductComponent } from './admin-product/admin-product.component';
+import { AdminCategoryComponent } from './admin-category/admin-category.component';
+import { AdminOrderComponent } from './admin-order/admin-order.component';
+import { AdminUserComponent } from './admin-user/admin-user.component';
 
 
 @NgModule({
@@ -41,7 +45,11 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ProductComponent,
     AddProductComponent,
     CartTableComponent,
-    CartTotalComponent
+    CartTotalComponent,
+    AdminProductComponent,
+    AdminCategoryComponent,
+    AdminOrderComponent,
+    AdminUserComponent
   
 
   ],
