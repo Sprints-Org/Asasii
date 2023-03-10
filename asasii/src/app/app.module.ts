@@ -19,7 +19,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { CartTableComponent } from './components/cart-table/cart-table.component';
 import { CartTotalComponent } from './components/cart-total/cart-total.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
@@ -50,7 +50,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule 
+    Ng2SearchPipeModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
