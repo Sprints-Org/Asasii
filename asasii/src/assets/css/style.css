@@ -734,3 +734,40 @@ color: #a5a4a4;
     }
     .paymentFeatures{margin-top: 80vh;}
 }
+.table {
+    border-radius: 0;
+    width: calc(100% - 2rem);
+    text-align: center;
+  }
+  
+  .table thead th {
+    background-color: #f5f5f5;
+    border: none;
+    border-bottom: 2px solid #dee2e6;
+    height: 2rem;
+  }
+  
+  .table tbody td {
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+    height: 2rem;
+  }
+  
+  .table tbody td:first-child {
+    width: 50%;
+  }
+  
+  .table tbody td:last-child {
+    width: 50%;
+  }
+  
+  .table tbody td.add,
+  .table tbody td.delete {
+    padding-right: 10px;
+  }
+  
+  .table tbody tr:hover td {
+    background-color: #b88e2f;
+    color: white;
+  }
+  

@@ -1,10 +1,8 @@
 .side-menu{
     border-radius: 0;
-    margin-top: 15rem;
-    margin-left: 5rem;
 }
 .side-menu > a{
-    width:25rem;
+    width:15rem;
     border-radius: 0;
     background-color:  #f5f5f5;
     border-width: 0px 0px 0px 0px;
