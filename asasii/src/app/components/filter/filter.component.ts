@@ -23,8 +23,6 @@ import { ProductService } from 'src/app/services/product.service';
       this.categoryService.getCategories().subscribe((data: any) => {
         this.categories = data;
         console.log(data.data);
-       
-        
       });    
       this. productService.getProducts().subscribe((data:any) => {
         this.products = data;
