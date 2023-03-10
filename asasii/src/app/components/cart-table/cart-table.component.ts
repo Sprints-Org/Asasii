@@ -7,6 +7,8 @@ import { CartLine } from 'src/app/interfaces/cart-line';
   styleUrls: ['./cart-table.component.css']
 })
 export class CartTableComponent {
-  @Input() CartLines:CartLine[]:[];
- 
+  @Input() CartLines:CartLine[]=[];
+ //incQuantity(i:number){this.CartLines[i].quantity+=1};
+ //decQuantity(i:number){if (this.CartLines[i].quantity>1){this.CartLines[i].quantity-=1}};
+ remove(i:number){this.CartLines.splice(i,1)};
 }

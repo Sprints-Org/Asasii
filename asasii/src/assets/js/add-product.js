@@ -1,3 +1,4 @@
+const JsAddProduct = function(){
 const productId = '123'; // Replace with the actual product ID
 const productUrl = `/api/products/${productId}`;
 
@@ -52,3 +53,4 @@ fetch(productUrl)
   
   document.querySelector('form').addEventListener('submit', updateProduct);
   document.querySelector('#delete-button').addEventListener('click', deleteProduct);
+}

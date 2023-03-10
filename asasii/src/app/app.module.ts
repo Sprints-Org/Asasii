@@ -16,8 +16,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FeaturesComponent } from './components/layouts/features/features.component';
 import { ProductComponent } from './components/layouts/product/product.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
-import { CartTableComponent } from './cart-table/cart-table.component';
+import { CartTableComponent } from './components/cart-table/cart-table.component';
 import { CartTotalComponent } from './components/cart-total/cart-total.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,10 +38,13 @@ import { CartTotalComponent } from './components/cart-total/cart-total.component
     AddProductComponent,
     CartTableComponent,
     CartTotalComponent
+  
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

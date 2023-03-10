@@ -5,7 +5,7 @@
       <p class="shop_title">Cart</p>
       <div class="home_arrow">
         <p class="home">Home</p>
-        <i class="bi bi-chevron-right" ></i>
+        <span><i class="fa-solid fa-chevron-right"></i></span>
         <p class="shop" style="font-weight: 300;">Cart</p>
       </div>
     </div>
@@ -14,38 +14,7 @@
 
 <div class="cartDetails"> 
 <div class="cartLine" >
-  <table>
-         
-    <tr class="theadcart">
-      <th>Product</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>SubTotal</th>
-      <th>Remove</th>
-     
-    </tr>
-  
-    <tr *ngFor="let item of cartItems; let i = index">
-        <td class="productDetailsCart" *ngFor="let item of cartItems; let i = index">
-           <img src="../../../assets/images/{{item.image}}" alt="" class="productImageCart"> 
-           {{item.name}}</td>
-        <td>{{item.price}}</td>
-        <td class="quantityCart"><button>{{item.Quantity}}</button></td>
-        <td>Rs. 250,000.00</td>
-        <td class="deleteCartLine" (click)="removeItem(i)"><i class="fa-solid fa-trash"></i></td>
-      </tr>
-   
-      <tr>
-          <td class="productDetailsCart"> 
-            <img src="../../../assets/images/Asgaard sofa.png" alt="" class="productImageCart"> 
-            Asgaard sofa</td>
-        <td>Rs. 250,000.00</td>
-        <td class="quantityCart"><button>1</button></td>
-        <td>Rs. 250,000.00</td>
-        <td class="deleteCartLine"><i class="fa-solid fa-trash"></i></td>
-      </tr>
-  
-  </table>
+<app-cart-table></app-cart-table>
   </div>
   <div class="cartSummary">
     <h1>Cart Totals</h1>
@@ -62,4 +31,4 @@
  </div>
 </div>
 
-<!--<app-features></app-features>-->
+<app-features></app-features>

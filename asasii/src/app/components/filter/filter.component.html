@@ -5,7 +5,7 @@
       <p class="shop_title">Shop</p>
       <div class="home_arrow">
         <p class="home">Home</p>
-        <i class="bi bi-chevron-right" ></i>
+        <i class="fa-solid fa-chevron-right"></i> 
         <p class="shop" style="font-weight: 300;">shop</p>
       </div>
     </div>
@@ -22,10 +22,8 @@
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                <i class="bi bi-sliders"></i>filter
               </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <ul class="dropdown-menu dropdown-menu-dark"> 
+                <li *ngFor="let c of categories; let i = index" ><a class="dropdown-item" >{{c.name}}</a></li> 
               </ul> 
           </li>
           <li class="nav-item">
@@ -37,6 +35,14 @@
 
           <li class="nav-item">
             <p class="results_number">showing 1-16 of 32 results</p>
+          </li>
+          <li>
+            <div class="search-bar">
+              <form action="results.php">
+                <input type="text" placeholder="Search for products" />
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              </form>
+            </div>
           </li>
         </ul>
         <div class="left-nav-side">
@@ -53,12 +59,12 @@
     </div>
   </nav>
   <div class="product-menu" style="margin-bottom: 15rem ;">
-    <div class="product">
-      <img src="../../../assets/images/products/Asgaard sofa.png" />
-      <p class="product-name">asgard sofa</p>
-      <p class="product-price">250000 R,S</p>
+    <div class="product" *ngFor="let p of products; let i = index">
+      <div  class="col-lg-2 col-md-5 mb-3 product-card">
+        <app-product [product]="p"></app-product>
+      </div>
     </div>
-    <div class="product">
+    <!-- <div class="product">
       <img src="../../../assets/images/products/chair_1.png" />
       <p class="product-name">bella chair and table</p>
       <p class="product-price">30000 Rs</p>
@@ -112,7 +118,7 @@
       <img src="../../../assets/images/products/Round coffee table_color 2 1.png" />
       <p class="product-name"> Round coffee table color</p>
      <p class="product-price">30000 Rs</p>
-    </div>
+    </div> -->
   </div>
   <div class="paymentFeatures">
     <div >

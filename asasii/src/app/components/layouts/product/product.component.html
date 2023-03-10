@@ -1,12 +1,11 @@
     <img
-      src="../../../assets/images/index/58e39805d460c4c63cccc8a518ca116f.png"
-      style="width: 15rem; height: 15rem"
+      src= {{getimage()}}
+      style="width: 15rem; height: 15rem"       
     />
     <div class="product-action">
       <a class="btn btn-outline-dark btn-square" (click)="addProductToCart()"><i
               class="fa fa-shopping-cart"></i></a>
-      <a class="btn btn-outline-dark btn-square" href="#"><i class="far fa-heart"></i></a>
       <a class="btn btn-outline-dark btn-square" href="#"><i class="fa fa-search"></i></a>
   </div>
-    <p>comfy bed</p>
-    <h4>200,000$</h4>
+    <p>{{product.name}}</p>
+    <h4>{{product.price}}</h4>
