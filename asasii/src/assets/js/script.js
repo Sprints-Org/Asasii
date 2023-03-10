@@ -1,5 +1,4 @@
-(function($) {
-    feather.replace();
+const JSfun = function(){
     const ids = [...$('.product-information-header').children()].map(({id}) => id);
     $(".btn-mobile-nav").on("click", function () {
         $(".header").toggleClass("nav-open");
@@ -31,4 +30,5 @@
         $(this).css('color', '#000000');
         $(`.${$(this).attr('id')}`).css('display', 'block');
     });
-})(jQuery);
+
+}

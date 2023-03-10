@@ -1,5 +1,5 @@
 
-import { Component,OnInit} from '@angular/core';
+import { Component,Input,OnInit} from '@angular/core';
 import { Category } from 'src/app/interfaces/Category';
 import { CategoryService } from 'src/app/services/category.service';
 import { Products } from 'src/app/interfaces/products';
@@ -22,11 +22,13 @@ import { ProductService } from 'src/app/services/product.service';
     ngOnInit() {
       this.categoryService.getCategories().subscribe((data: any) => {
         this.categories = data;
-        console.log(data);
+        console.log(data.data);
+       
         
       });    
       this. productService.getProducts().subscribe((data:any) => {
         this.products = data;
+        console.log(data);
         console.log(data);
       });
       

@@ -1,0 +1,32 @@
+<table>
+         
+    <tr class="theadcart">
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>SubTotal</th>
+      <th>Remove</th>
+     
+    </tr>
+  
+    <tr *ngFor="let item of CartLines; let i = index">
+        <td class="productDetailsCart" *ngFor="let item of CartLines; let i = index">
+          <!--<img src="../../../assets/images/{{item.image}}" alt="" class="productImageCart"> --> 
+           {{item.product}}</td>
+        <td>{{item.price}}</td>
+        <td class="quantityCart"><button>{{item.quantity}}</button></td>
+        <td>Rs. 250,000.00</td>
+        <td class="deleteCartLine" (click)="remove(i)"><i class="fa-solid fa-trash"></i></td>
+      </tr>
+   
+      <tr>
+          <td class="productDetailsCart"> 
+            <img src="../../../assets/images/Asgaard sofa.png" alt="" class="productImageCart"> 
+            Asgaard sofa</td>
+        <td>Rs. 250,000.00</td>
+        <td class="quantityCart"><button>1</button></td>
+        <td>Rs. 250,000.00</td>
+        <td class="deleteCartLine"><i class="fa-solid fa-trash"></i></td>
+      </tr>
+  
+  </table>

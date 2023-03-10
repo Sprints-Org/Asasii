@@ -15,7 +15,9 @@ export class ProductService {
     return this.httpClient.get(`${environment.apiUrl}product`);
   }
 
-  
+  getProductById(id:any):any{
+    return this.httpClient.get(`${environment.apiUrl}product/${id}`);
+  }
 
   addProduct(product: Products): void {
     this.cartProducts.push(product);

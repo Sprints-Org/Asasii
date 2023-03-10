@@ -267,36 +267,12 @@
 <div class="container-fluid horizontal-line"></div>
 <section class="related-products container my-5">
     <div class="text-center mb-2">
-        <h2>Related Products</h2>
+        <h2>Recent Products</h2>
     </div>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="d-flex h-75 justify-content-center align-items-center">
-                <img src="../../../assets/images/products/sofa_1.png" alt="" srcset="" />
-            </div>
-            <div>Trenton modular sofa_3</div>
-            <div class="related-products-price mt-3">EGP. 5,000.00</div>
+    <div class="row align-items-center justify-content-evenly py-5">
+        <div class="col-lg-2 col-md-5 mb-3 product-card" *ngFor="let p of products.slice(4); let i = index;" >
+          <app-product  [product]="p" ></app-product>
         </div>
-        <div class="col-md-3">
-            <div class="d-flex h-75 justify-content-center align-items-center">
-                <img src="../../../assets/images/products/chair_1.png" alt="" srcset="" />
-            </div>
-            <div class="text-start">Trenton modular sofa_3</div>
-            <div class="related-products-price mt-3 text-start">EGP. 5,000.00</div>
-        </div>
-        <div class="col-md-3">
-            <div class="d-flex h-75 justify-content-center align-items-center">
-                <img src="../../../assets/images/products/stool_1.png" alt="" srcset="" />
-            </div>
-            <div class="text-start">Trenton modular sofa_3</div>
-            <div class="related-products-price mt-3 text-start">EGP. 5,000.00</div>
-        </div>
-        <div class="col-md-3">
-            <div class="d-flex h-75 justify-content-center align-items-center">
-                <img src="../../../assets/images/products/mirror_1.png" alt="" srcset="" />
-            </div>
-            <div class="text-start">Trenton modular sofa_3</div>
-            <div class="related-products-price mt-3 text-start">EGP. 5,000.00</div>
-        </div>
+       
     </div>
 </section>

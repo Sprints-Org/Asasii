@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-//import { CartLine } from '../interfaces/cart-line';
+import { CartLine } from '../interfaces/cart-line';
 import { Products } from '../interfaces/products';
 
 @Injectable({
