@@ -17,15 +17,15 @@ export class CategoryService {
    return this.httpClient.get(`${environment.apiUrl}category/`);
     
   }
-  editCategory(category:any,ID:any):any{
-    let headers= new HttpHeaders( {'Authorization': 'Bearer ' +  this.auth.getToken()});
-    return this.httpClient.put(`${environment.apiUrl}category/${ID}`, { headers: headers },category);
-   
-  }
   addNewCategory(category:any):any{
     let headers= new HttpHeaders( {'Authorization': 'Bearer ' +  this.auth.getToken()});
-    return this.httpClient.post(`${environment.apiUrl}category`, { headers: headers },category);
+    return this.httpClient.post(`${environment.apiUrl}category` ,category , { headers: headers });
     }
+  editCategory(category:any,ID:any):any{
+    let headers= new HttpHeaders( {'Authorization': 'Bearer ' +  this.auth.getToken()});
+    return this.httpClient.put(`${environment.apiUrl}category/${ID}`, category,{ headers: headers });
+   
+  }
   deleteCategory(ID: any): any {
       let headers= new HttpHeaders( {'Authorization': 'Bearer ' +  this.auth.getToken()});
       return this.httpClient.delete(`${environment.apiUrl}category/${ID}`, { headers: headers });

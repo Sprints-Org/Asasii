@@ -12,38 +12,66 @@ import { CategoryService } from 'src/app/services/category.service';
 export class AddCategoryComponent {
   error: string = '';
   token: string ='';
-  AddForm:FormGroup;
+  // AddForm:FormGroup;
+  file:any;
 
   constructor(
     // private storageService: StorageService,
     private authService:AuthService,
     private categoryService:CategoryService,fb: FormBuilder,private router:Router) {
 
-      this.AddForm = fb.group(
-        {
-          name: new FormControl('', [Validators.required]),
-          image: new FormControl('',[Validators.required]),
-        }
-      );
+      // this.AddForm = fb.group(
+      //   {
+      //     name: new FormControl('', [Validators.required]),
+      //     image: new FormControl('',[Validators.required]),
+      //   }
+      // );
   }
-  addCategory(): any {
-    if (this.AddForm.valid) {
-      this.error = '';
-      console.log(this.AddForm.value)
-      this.categoryService.addNewCategory(this.AddForm.value)
-      .subscribe({
-        next: (data: any) => {
-          console.log(data);
-          this.router.navigate(['/profile/1']);
-        },
-        error: (error: any) => {
-          this.error = error?.error;
-        },
-        complete: () => {
-          console.log('complete');
-        },
-      }
-      );
-    }
-  }
+  // addCategory(): any {
+  //   // if (this.AddForm.valid) {
+  //   //   this.error = '';
+  //   //   console.log(this.AddForm.value)
+  //   //   this.categoryService.addNewCategory(this.AddForm.value)
+  //   //   .subscribe({
+  //   //     next: (data: any) => {
+  //   //       console.log(data);
+  //   //       this.router.navigate(['/profile/1']);
+  //   //     },
+  //   //     error: (error: any) => {
+  //   //       this.error = error?.error;
+  //   //     },
+  //   //     complete: () => {
+  //   //       console.log('complete');
+  //   //     },
+  //   //   }
+  //   //   );
+  //   // }
+    
+  // }
+
+
+onChange(event:any){
+ this.file = event.target.files[0]
+}
+
+addCategory():any{
+  this.categoryService.addNewCategory(this.file).subscribe({
+            next: (data: any) => {
+              console.log(data);
+            },
+            error: (error: any) => {
+              this.error = error?.error;
+            },
+            complete: () => {
+              console.log('complete');
+            },
+          }
+        );
+}
+// var test = {test:"test"}
+//   const formData = new FormData();
+//   formData.append('name', JSON.stringify());
+//   formData.append('file', file, file.name);
+
+
 }

@@ -57,9 +57,6 @@
                 <a class="btn btn-app" routerLink="/edit-product/{{p._id}}" >
                     <i class="fas fa-edit"></i>
                 </a>
-            </td>
-            <td>
-
                 <form (ngSubmit)="delete(p._id)">
                         <button class="btn btn-app" onclick="return confirm('Are you sure?')" type="submit">
                             <i class="fas fa-trash" ></i>

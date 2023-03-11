@@ -29,11 +29,11 @@ export class ProductService {
   
   addNewProduct(product:any): any {
     let headers= new HttpHeaders( {'Authorization': 'Bearer ' +  this.auth.getToken()});
-    return this.httpClient.post(`${environment.apiUrl}product`,  { headers: headers },product);
+    return this.httpClient.post(`${environment.apiUrl}product`, product, { headers: headers });
   }
   editProduct(product:any,id:any): any {
     let headers= new HttpHeaders( {Authorization: 'Bearer ' +  this.auth.getToken()});
-    return this.httpClient.put(`${environment.apiUrl}product/${id}`, { headers: headers },product);
+    return this.httpClient.put(`${environment.apiUrl}product/${id}`, product,{ headers: headers });
     }
   deleteProduct(productID: any): any {
       let headers= new HttpHeaders( {'Authorization': 'Bearer ' +  this.auth.getToken()});
