@@ -112,7 +112,7 @@
       
     }
   }
-.navbar-expand-lg{ margin-top:30vh;
+.navbar-expand-lg{ margin-top:10vh;
   }
 
 .bi-three-dots-vertical{margin-top: 40vh;}
@@ -142,7 +142,7 @@
 
 .left-nav-side p {
   margin-right: 10px;
-  margin-top: 2vh;
+  /* margin-top: 1vh; */
 }
 
 .number-box {
