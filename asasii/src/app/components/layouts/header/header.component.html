@@ -16,16 +16,18 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-regular fa-user fa-xl"></i>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-right">
-                    <li><a class="dropdown-item" routerLink="/login">Profile</a></li>
-                    <li><a class="dropdown-item" routerLink="/login">Sign in</a></li>
-                    <li><a class="dropdown-item" routerLink="/login">Sign out</a></li>
-    
-                    <!-- <li *ngIf="authService.getIsAuthenticated()" ><a class="dropdown-item" routerLink="/profile/${authService.id()}"> {{ authService.getName() }}</a></li>
-                    <li *ngIf="authService.getIsAuthenticated()" ><a class="dropdown-item" routerLink="/login">Sign in</a></li>
-                    <li *ngIf="authService.getIsAuthenticated()" ><a class="dropdown-item" routerLink="/signout">Sign out</a></li> -->
-                  </ul> 
-            </li>
-        </ul>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-right" *ngIf="!authService.getIsAuthenticated()">
+                      <li>  <a class="dropdown-item" routerLink="/login">Sign in / sign up</a> </li>
+                    </ul>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-right" *ngIf="!authService.getIsAuthenticated()">
+                        <li> <a class="dropdown-item" routerLink="/myprofile/{{authService.getId()}}">profile</a> </li>  
+                       <li> <a class="dropdown-item" (click)="signOut()">Sign Out</a> </li> 
+                    </ul>
+
+          
+                </li>
+                </ul> 
+
+                 
     </nav>
 </header>

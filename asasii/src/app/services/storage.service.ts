@@ -27,8 +27,8 @@ export class StorageService {
       if (ix >= 0) {
         cartLines[ix].quantity += 1;
       } else {
-        let cartLine = new CartLine(p)
-        cartLines.push(cartLine);
+       // let cartLine = new CartLine(p)
+       // cartLines.push(cartLine);
       }
     });
     return cartLines;

@@ -9,11 +9,11 @@ import { environment } from 'src/environment/environment';
 export class AuthService {
   constructor(private httpClient: HttpClient, private router: Router) {}
   login(loginData: any) {
-    return this.httpClient.post(`${environment.apiUrl}users/login`, loginData);
+    return this.httpClient.post(`${environment.apiUrl}auth/login`, loginData);
   }
 
   register(data: any) {
-    return this.httpClient.post(`${environment.apiUrl}users/register`, data);
+    return this.httpClient.post(`${environment.apiUrl}auth/register`, data);
   }
   saveLoginData(loginData: any) {
     localStorage.setItem('loginData', JSON.stringify(loginData));
@@ -31,10 +31,8 @@ export class AuthService {
     return this.getLoginData()?.token;
   }
 
-  getName() {
-    return `${this.getLoginData()?.first_name} ${
-      this.getLoginData()?.last_name
-    }`;
+  getId() {
+    return `${this.getLoginData()?._id}`;
   }
 
   signOut() {

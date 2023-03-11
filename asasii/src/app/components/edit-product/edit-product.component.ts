@@ -1,28 +1,25 @@
-import { HttpHeaders } from '@angular/common/http';
-import { AfterViewInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
-import { ProductService } from 'src/app/services/product.service';
-declare function JsAddProduct():void;
+import { AuthService } from '../../services/auth.service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
-  selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.css']
+  selector: 'app-edit-product',
+  templateUrl: './edit-product.component.html',
+  styleUrls: ['./edit-product.component.css']
 })
-
-export class AddProductComponent implements AfterViewInit {
+export class EditProductComponent {
   error: string = '';
   token: string ='';
-  AddForm:FormGroup;
+  EditForm:FormGroup;
 
   constructor(
     // private storageService: StorageService,
     private authService:AuthService,
     private productService:ProductService,fb: FormBuilder,private router:Router) {
 
-      this.AddForm = fb.group(
+      this.EditForm = fb.group(
         {
           name: new FormControl('', [Validators.required]),
           price: new FormControl('', [Validators.required]),
@@ -35,11 +32,11 @@ export class AddProductComponent implements AfterViewInit {
         }
       );
   }
-  addProduct(): any {
-    if (this.AddForm.valid) {
+  editProduct(): any {
+    if (this.EditForm.valid) {
       this.error = '';
-      console.log(this.AddForm.value)
-      this.productService.addNewProduct(this.AddForm.value).subscribe({
+      console.log(this.EditForm.value)
+      this.productService.addNewProduct(this.EditForm.value).subscribe({
         next: (data: any) => {
           console.log(data);
           this.router.navigate(['/profile/1']);
@@ -52,11 +49,7 @@ export class AddProductComponent implements AfterViewInit {
         },
       });
     }
-  } 
-
-  ngAfterViewInit(): void {
-    JsAddProduct();
   }
   
-
 }
+
