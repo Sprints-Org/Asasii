@@ -1,107 +1,84 @@
-<div class="main_title">
-    <img src="../../../assets/images/shop-main-rec.png" />
-    <div class="text-container">
-      <div class="logo"><img src="../../../assets/images/logo.png" /></div>
-      <p class="shop_title">Shop</p>
-      <div class="home_arrow">
-        <p class="home">Home</p>
-        <i class="bi bi-chevron-right" ></i>
-        <p class="shop" style="font-weight: 300;">Checkout</p>
-      </div>
-    </div>
-  </div>
+<div class=" subHeader">
+  <img src="../../../assets/images/image.jpg" alt="" class="subHeaderImage">
+<div class="logo">
+  <img src="../../../assets/images/logo.png" alt="">
+  <h1 id="checkout-title">Checkout</h1>
+</div>
+<div class="path">
+  <h3>Home</h3>
+  <span><i class="fa-solid fa-chevron-right"></i> </span>
+  <h4>Checkout</h4>
+</div>
+</div>
   <!--- checkout -->
   <div class="checkout">
       <div class="billing-details">
-          <h1 id="billing-title"> Billing details</h1>
-          <form>
+       <form [formGroup]="checkOutForm">
+                <div class="col-md-6">
+            <h1 id="billing-title"> Billing details</h1>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">First Name</label>
-                <input type="text" class="form-control"  >
+                <input formControlName="first_name" type="text" class="form-control"  >
               </div>
               <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Last Name</label>
-                  <input type="text" class="form-control">
+                  <input formControlName="last_name" type="text" class="form-control">
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Company Name (optional)</label>
-                  <input type="text" class="form-control" >
+                  <label for="exampleInputEmail1" class="form-label">Country</label>
+                  <select formControlName="country" class="form-control" class="form-select" placeholder="Select Country">
+                    <option [selected]>Egypt</option>
+                    <option>USA</option>
+                    <option>Algeria</option>
+                  </select>
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">country</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Egypt</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
+                  <label for="exampleInputEmail1" class="form-label">City</label>
+                  <input formControlName="city" type="text" class="form-control">
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Town/city</label>
-                  <input type="text" class="form-control">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Province</label>
-                  <input  class="form-control">
+                  <label for="exampleInputEmail1" class="form-label">Address</label>
+                  <input  formControlName="address" class="form-control">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Zip code</label>
-                  <input type="number" class="form-control">
+                  <input formControlName="zip_code" type="number" class="form-control">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Phone Number</label>
-                  <input type="number" class="form-control">
+                  <input formControlName="phone_number" type="number" class="form-control">
                 </div>
-                <div class="mb-3">
+                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email address</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                  <br>
+                  <div class="bank-info">
+                      <p> Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy. </p>
+                  </div>
                 </div>
-            
-                <div class="product-total">
+                <div class="col-md-2"></div>
+                <div class="col-md-4 product-total">
                   <div class="border-bottom">
-                      <h6 class="mb-3" style="font-weight: 500; font-size: 24px;">Products</h6>
+                      <h6 class="mb-3" style="font-weight: 600; font-size: 32px;">Products</h6>
                       <div class="d-flex justify-content-between">
-                          <p>Product Name 1</p>
+                          <p style="font-weight: 400; font-size: 22px;">Subtotal</p>
                           <p>$150</p>
                       </div>
                       <div class="d-flex justify-content-between">
-                          <p>subtotal</p>
-                          <p>$150</p>
+                          <p style="font-weight: 400; font-size: 22px;">Shipping</p>
+                          <p>$2</p>
                       </div>
                       <div class="d-flex justify-content-between">
-                          <p >total</p>
+                          <p style="font-weight: 500; font-size: 26px;">Total</p>
                           <p id="total-no">$150</p>
                       </div>
                   </div>
-                  <br>
-                  <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        Direct Bank Transfer
-                      </label>
-                    </div>
-                    <br>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        Cash on delivery
-                      </label>
-                    </div>
-                    <br>
-                  <div class="bank-info">
-                      <p> Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy. </p>
-
-                  </div>
-                  <button type="button" class="btn btn-primary btn-lg" id="place-order">Place order</button>  
+                  <button type="button" class="btn btn-primary btn-lg" id="place-order" (click)="checkout()">Place order</button>  
                </div>
-              
-            </form>
-
-    
-      
-
-
+        </form>      
+      </div>
   </div>
   <!--end checkout-->
  <app-features></app-features>

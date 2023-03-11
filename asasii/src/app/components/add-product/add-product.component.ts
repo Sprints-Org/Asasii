@@ -1,4 +1,9 @@
+import { HttpHeaders } from '@angular/common/http';
 import { AfterViewInit, Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { ProductService } from 'src/app/services/product.service';
 declare function JsAddProduct():void;
 
 @Component({
@@ -8,8 +13,50 @@ declare function JsAddProduct():void;
 })
 
 export class AddProductComponent implements AfterViewInit {
+  error: string = '';
+  token: string ='';
+  AddForm:FormGroup;
+
+  constructor(
+    // private storageService: StorageService,
+    private authService:AuthService,
+    private productService:ProductService,fb: FormBuilder,private router:Router) {
+
+      this.AddForm = fb.group(
+        {
+          name: new FormControl('', [Validators.required]),
+          price: new FormControl('', [Validators.required]),
+          quantity: new FormControl('', [Validators.required]),
+          image: new FormControl('',[Validators.required]),
+          description: new FormControl('', [Validators.required]),
+          Additional_info: new FormControl('', [Validators.required]),
+          colors: new FormControl('', [Validators.required]),
+          category_name: new FormControl('', [Validators.required]),
+        }
+      );
+  }
+  addProduct(): any {
+    if (this.AddForm.valid) {
+      this.error = '';
+      console.log(this.AddForm.value)
+      this.productService.addNewProduct(this.AddForm.value).subscribe({
+        next: (data: any) => {
+          console.log(data);
+          this.router.navigate(['/profile/1']);
+        },
+        error: (error: any) => {
+          this.error = error?.error;
+        },
+        complete: () => {
+          console.log('complete');
+        },
+      });
+    }
+  } 
+
   ngAfterViewInit(): void {
     JsAddProduct();
   }
+  
 
 }

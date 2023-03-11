@@ -1,4 +1,4 @@
-.checkout{
+/* .checkout{
     margin:15em 10em 15em 10em;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -30,4 +30,4 @@ grid-template-rows: 1fr auto;
 }
 @media (max-width:40em) {
     #place-order{margin-left: 12%;}
-}
+} */

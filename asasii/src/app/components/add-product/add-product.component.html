@@ -1,18 +1,22 @@
 <div class="container-edit" id="container">
     <div class="form-container-edit edit-container">
-        <form action="#">
-            <input type="Product Name" placeholder="Product Name" />
-            <input type="Product Description" placeholder="Product Description" />
-            <input type="Price" placeholder="Price" />
-            <input type="Add Image URL" placeholder="Add Image URL" />
-            <button>Update Product</button>
+        <form action="post"  [formGroup]="AddForm" (ngSubmit)="addProduct()">
+            <input name="name" placeholder="Product Name"  formControlName="name" class="form-control"/>
+            <input name="price" type="number" placeholder="Price"  formControlName="price" class="form-control"/>
+            <input name="quantity" type="number"  placeholder="quantity"  formControlName="quantity" class="form-control"/>
+            <input name="image" type="file" placeholder="Add Image"  formControlName="image" class="form-control"/>
+            <input name="description" placeholder="Product Description"  formControlName="description" class="form-control"/>
+            <input name="Additional_info"  placeholder="Additional_info in form of key and value"  formControlName="Additional_info" class="form-control"/>
+            <input name="colors"  placeholder="colors in form of array of strings"  formControlName="colors" class="form-control"/>
+            <input name="category_name" type="select"  placeholder="category name"  formControlName="category_name" class="form-control"/>
+            <button type="submit">Add Product</button>
         </form>
     </div>
 
     <div class="overlay-container-edit">
         <div class="overlay-add">
             <div class="overlay-panel overlay-right">
-                <h1>Hello Seller!</h1>
+                <h1>Hello Admin!</h1>
                 Enter the product information
             </div>
         </div>

@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://sea-turtle-app-pqyfi.ondigitalocean.app/api/',
+  apiUrl: 'http://164.90.163.189/api/',
 };

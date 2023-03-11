@@ -8,9 +8,9 @@ import { environment } from 'src/environment/environment'
 export class CheckoutService {
   constructor(private httpClient: HttpClient) {}
 
-  addOrder(order:any,token:string): any {
-    let headers= new HttpHeaders()
-    headers=headers.set("x-access-token",token)
-    return this.httpClient.post(`${environment.apiUrl}orders`,order,{headers:headers});
+  addOrder(order:any): any {
+    // let headers= new HttpHeaders()
+    // headers=headers.set("x-access-token",token)
+    return this.httpClient.post(`${environment.apiUrl}orders`,order);
   }
 }

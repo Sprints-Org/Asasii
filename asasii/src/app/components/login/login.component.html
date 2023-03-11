@@ -1,20 +1,20 @@
 <div class="container" id="container">
     <div class="form-container sign-up-container">
-        <form action="#">
+        <form action="post"  [formGroup]="signupForm" (ngSubmit)="signup()">
             <h1>Create Account</h1>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>Sign Up</button>
+            <input name="firstName" placeholder="First Name" formControlName="firstName" class="form-control" />
+            <input name="lastName" placeholder="Last Name" formControlName="lastName" class="form-control"/>
+            <input name="email" type="email" placeholder="Email" formControlName="email" class="form-control"/>
+            <input name="password" type="password" placeholder="Password" formControlName="password" class="form-control"/>
+            <button type="submit">sign up</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
+        <form action="post"  [formGroup]="signinForm" (ngSubmit)="signin()">
             <h1>Sign in</h1>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <a href="#">Forgot your password?</a>
-            <button>Sign In</button>
+             <input name="email" type="email" placeholder="Email" formControlName="email" class="form-control"/>
+            <input name="password" type="password" placeholder="Password" formControlName="password" class="form-control"/>
+            <button type="submit">sign in</button>
         </form>
     </div>
     <div class="overlay-container">

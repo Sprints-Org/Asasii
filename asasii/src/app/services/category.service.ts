@@ -16,4 +16,6 @@ export class CategoryService {
    return this.httpClient.get(`${environment.apiUrl}category/`);
     
   }
+  editCategory(category:any):any{}
+  addNewCategory(category:any):any{}
 }
