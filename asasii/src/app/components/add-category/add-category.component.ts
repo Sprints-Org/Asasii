@@ -30,20 +30,20 @@ export class AddCategoryComponent {
     if (this.AddForm.valid) {
       this.error = '';
       console.log(this.AddForm.value)
-      this.categoryService.editCategory(this.AddForm.value)
-      // .subscribe({
-      //   next: (data: any) => {
-      //     console.log(data);
-      //     this.router.navigate(['/profile/1']);
-      //   },
-      //   error: (error: any) => {
-      //     this.error = error?.error;
-      //   },
-      //   complete: () => {
-      //     console.log('complete');
-      //   },
-      // }
-      //);
+      this.categoryService.addNewCategory(this.AddForm.value)
+      .subscribe({
+        next: (data: any) => {
+          console.log(data);
+          this.router.navigate(['/profile/1']);
+        },
+        error: (error: any) => {
+          this.error = error?.error;
+        },
+        complete: () => {
+          console.log('complete');
+        },
+      }
+      );
     }
   }
 }
