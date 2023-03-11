@@ -23,5 +23,9 @@ export class AdminCategoryComponent {
       console.log(data);
     });
 }
-
+delete(id:any){
+  this.Categorieservice.deleteCategory(id).subscribe((data:any) => {
+    console.log(data);
+  });
+}
 }

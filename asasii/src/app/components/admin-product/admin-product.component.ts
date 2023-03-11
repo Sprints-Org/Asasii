@@ -17,5 +17,11 @@ export class AdminProductComponent {
       this.products = data;
       console.log(data);
     });
+
+}
+delete(id:any){
+  this.productService.deleteProduct(id).subscribe((data:any) => {
+    console.log(data);
+  });
 }
 }

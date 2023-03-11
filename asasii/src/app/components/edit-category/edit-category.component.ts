@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { CategoryService } from 'src/app/services/category.service';
-import { ProductService } from 'src/app/services/product.service';
+
 
 @Component({
   selector: 'app-edit-category',
@@ -15,10 +15,11 @@ export class EditCategoryComponent {
   token: string ='';
   EditForm:FormGroup;
 
+
   constructor(
     // private storageService: StorageService,
     private authService:AuthService,
-    private categoryService:CategoryService,fb: FormBuilder,private router:Router) {
+    private categoryService:CategoryService,fb: FormBuilder,private router:Router,private route: ActivatedRoute) {
 
       this.EditForm = fb.group(
         {
@@ -31,7 +32,7 @@ export class EditCategoryComponent {
     if (this.EditForm.valid) {
       this.error = '';
       console.log(this.EditForm.value)
-      this.categoryService.editCategory(this.EditForm.value).subscribe({
+      this.categoryService.editCategory(this.EditForm.value, this.route.snapshot.paramMap.get('id')).subscribe({
         next: (data: any) => {
           console.log(data);
           this.router.navigate(['/profile/1']);

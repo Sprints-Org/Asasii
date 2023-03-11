@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { ProductService } from '../../services/product.service';
 
@@ -17,7 +17,7 @@ export class EditProductComponent {
   constructor(
     // private storageService: StorageService,
     private authService:AuthService,
-    private productService:ProductService,fb: FormBuilder,private router:Router) {
+    private productService:ProductService,fb: FormBuilder,private router:Router,private route: ActivatedRoute) {
 
       this.EditForm = fb.group(
         {
@@ -36,7 +36,7 @@ export class EditProductComponent {
     if (this.EditForm.valid) {
       this.error = '';
       console.log(this.EditForm.value)
-      this.productService.addNewProduct(this.EditForm.value).subscribe({
+      this.productService.editProduct(this.EditForm.value, this.route.snapshot.paramMap.get('id')).subscribe({
         next: (data: any) => {
           console.log(data);
           this.router.navigate(['/profile/1']);
