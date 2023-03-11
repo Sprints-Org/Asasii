@@ -14,21 +14,16 @@
 
 <div class="cartDetails"> 
 <div class="cartLine" >
-<app-cart-table></app-cart-table>
+<app-cart-table [CartLines]="cartLines"> </app-cart-table>
   </div>
   <div class="cartSummary">
-    <h1>Cart Totals</h1>
-   <div class="subtotal">
-       <h3>SubTotal</h3>
-       <h4>Rs. 250,000.00</h4>
-   </div>
-   <div class="total">
-       <h3>Total</h3>
-       <h4>Rs. 250,000.00</h4>
+    <app-cart-total  [subTotal]="getSubTotal()"
+    [shipping]="getShipping()"
+    [total]="getTotal()"></app-cart-total>
    </div>
 <button>Check Out</button>
 
  </div>
-</div>
+
 
 <app-features></app-features>

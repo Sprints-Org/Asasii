@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartLine } from 'src/app/interfaces/cart-line';
+import { StorageService } from 'src/app/services/storage.service';
+import { environment } from 'src/environment/environment';
 
 @Component({
   selector: 'app-cart-table',
@@ -7,8 +9,17 @@ import { CartLine } from 'src/app/interfaces/cart-line';
   styleUrls: ['./cart-table.component.css']
 })
 export class CartTableComponent {
+  constructor(private storageService:StorageService){
+
+  }
   @Input() CartLines:CartLine[]=[];
- //incQuantity(i:number){this.CartLines[i].quantity+=1};
- //decQuantity(i:number){if (this.CartLines[i].quantity>1){this.CartLines[i].quantity-=1}};
- remove(i:number){this.CartLines.splice(i,1)};
+  @Output() limitAlert = new EventEmitter<string>();
+ 
+ remove(i: number) {
+  this.CartLines.splice(i,1);
+  this.storageService.save(this.CartLines);
+}
+ getproductImage(){
+  return `${environment.imageUrl}products/`
+}
 }

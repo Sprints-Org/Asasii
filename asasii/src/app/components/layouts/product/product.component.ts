@@ -2,6 +2,7 @@ import { Component,Input,OnInit } from '@angular/core';
 import { Products } from 'src/app/interfaces/products';
 import { ProductService } from 'src/app/services/product.service';
 import { environment } from 'src/environment/environment';
+import { StorageService } from 'src/app/services/storage.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -9,10 +10,10 @@ import { environment } from 'src/environment/environment';
 })
 export class ProductComponent {
   @Input() product : Products = {} as Products;
-  constructor(private productService:ProductService){}
+  constructor(private storageService: StorageService) {}
   
     addProductToCart(){
-    this.productService.addProduct(this.product)}
+    this.storageService.addProducts(this.product,1)}
   
 
  getimage(){
