@@ -21,6 +21,9 @@
 ## Backend 
 - backend is deployed and connected to the angular application.
 - you can find the source code in the following link https://github.com/Sprints-Org/Asasii-Back-End .
+- To log in as admin, use the following: (email: alaanew@gmail.com, password: 12345) and
+  direct to the following url (http://127.0.0.1:4200/profile/1)
 ## how to run the code 
 - npm install
 - ng serve --host 0.0.0.0
+- in your browser direct to http://127.0.0.1:4200/
