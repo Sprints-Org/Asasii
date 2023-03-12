@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Products } from 'src/app/interfaces/products';
 import { AuthService } from '../../services/auth.service';
 import { ProductService } from '../../services/product.service';
 
@@ -12,31 +13,32 @@ import { ProductService } from '../../services/product.service';
 export class EditProductComponent {
   error: string = '';
   token: string ='';
-  EditForm:FormGroup;
-
+  file:any;
+  old_product:Products;
   constructor(
     // private storageService: StorageService,
     private authService:AuthService,
-    private productService:ProductService,fb: FormBuilder,private router:Router) {
-
-      this.EditForm = fb.group(
-        {
-          name: new FormControl('', [Validators.required]),
-          price: new FormControl('', [Validators.required]),
-          quantity: new FormControl('', [Validators.required]),
-          image: new FormControl('',[Validators.required]),
-          description: new FormControl('', [Validators.required]),
-          Additional_info: new FormControl('', [Validators.required]),
-          colors: new FormControl('', [Validators.required]),
-          category_name: new FormControl('', [Validators.required]),
-        }
-      );
+    private productService:ProductService,fb: FormBuilder,private router:Router,private route: ActivatedRoute) {
+      this.old_product= productService.getProductById(this.route.snapshot.paramMap.get('id')?.substring(1))
+  
   }
+  
+onChange(event:any){
+  this.file = event.target.files[0]
+ }
   editProduct(): any {
-    if (this.EditForm.valid) {
-      this.error = '';
-      console.log(this.EditForm.value)
-      this.productService.addNewProduct(this.EditForm.value).subscribe({
+    const formData = new FormData();
+    formData.append('image', this.file);
+    formData.append('name',(<HTMLInputElement>document.getElementById("name")).value);
+    formData.append('price',(<HTMLInputElement>document.getElementById("price")).value);
+    formData.append('quantity',(<HTMLInputElement>document.getElementById("quantity")).value);
+    formData.append('description',(<HTMLInputElement>document.getElementById("description")).value);
+    formData.append('Additional_info',(<HTMLInputElement>document.getElementById("Additional_info")).value);
+    formData.append('colors',(<HTMLInputElement>document.getElementById("colors")).value);
+    formData.append('category_name',(<HTMLInputElement>document.getElementById("category_name")).value);
+
+  
+      this.productService.editProduct(formData, this.route.snapshot.paramMap.get('id')).subscribe({
         next: (data: any) => {
           console.log(data);
           this.router.navigate(['/profile/1']);
@@ -51,5 +53,5 @@ export class EditProductComponent {
     }
   }
   
-}
+
 

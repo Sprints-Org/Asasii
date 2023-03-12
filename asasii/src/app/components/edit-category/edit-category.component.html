@@ -1,8 +1,8 @@
 <div class="container-edit" id="container">
     <div class="form-container-edit edit-container">
-        <form action="post"  [formGroup]="EditForm" (ngSubmit)="editCategory()">
-            <input name="name" placeholder="Category Name"  formControlName="name" class="form-control"/>
-            <input name="image" type="file" placeholder="Add Image"  formControlName="image" class="form-control"/>
+        <form action="post" (ngSubmit)="editCategory()">
+            <input id="name" placeholder="Category Name"  formControlName="name" class="form-control" value="{{this.oldCategory.name}}"/>
+            <input id="image" type="file" placeholder="Add Image"  formControlName="image" class="form-control"  (change)="onChange($event)" />
             <button type="submit">Edit Category</button>
         </form>
     </div>

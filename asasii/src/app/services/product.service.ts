@@ -26,10 +26,20 @@ export class ProductService {
   getProductByCategory(category_name:string){
     return this.httpClient.get(`${environment.apiUrl}category/${category_name}/products`);
   }
-
+  
   addNewProduct(product:any): any {
-    let headers= new HttpHeaders({Authorization : [`Bearer ${this.auth.getToken()}`],'Content-Type': 'multipart/form-data'});
-    return this.httpClient.post(`${environment.apiUrl}product`,headers ,product);
+    let headers= new HttpHeaders( {'Authorization': 'Bearer ' +  this.auth.getToken()});
+    return this.httpClient.post(`${environment.apiUrl}product`, product, { headers: headers });
+  }
+  editProduct(product:any,id:any): any {
+    let headers= new HttpHeaders( {Authorization: 'Bearer ' +  this.auth.getToken()});
+    return this.httpClient.put(`${environment.apiUrl}product/${id}`, product,{ headers: headers });
     }
+  deleteProduct(productID: any): any {
+      let headers= new HttpHeaders( {'Authorization': 'Bearer ' +  this.auth.getToken()});
+      return this.httpClient.delete(`${environment.apiUrl}product/${productID}`, { headers: headers });
+    }
+
+ 
   
 }

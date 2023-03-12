@@ -61,16 +61,17 @@ export class LoginComponent implements AfterViewInit {
     if (this.signinForm.valid) {
       this.error = '';
       console.log(this.signinForm.value);
-      this.authService.login(this.signinForm.value).subscribe({
+     this.authService.login(this.signinForm.value).subscribe({
         next: (data: any) => {
           console.log(data);
+          this.authService.saveLoginData(data);
           this.router.navigate(['/profile/1']);
         },
         error: (error: any) => {
           this.error = error?.error;
         },
         complete: () => {
-          this.authService.saveLoginData;
+         
           console.log('complete');
         },
       });

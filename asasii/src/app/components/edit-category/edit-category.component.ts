@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Category } from 'src/app/interfaces/Category';
 import { AuthService } from 'src/app/services/auth.service';
 import { CategoryService } from 'src/app/services/category.service';
-import { ProductService } from 'src/app/services/product.service';
+
 
 @Component({
   selector: 'app-edit-category',
@@ -13,38 +14,39 @@ import { ProductService } from 'src/app/services/product.service';
 export class EditCategoryComponent {
   error: string = '';
   token: string ='';
-  EditForm:FormGroup;
+  file:any;
+  oldCategory:Category;
+  
 
   constructor(
     // private storageService: StorageService,
     private authService:AuthService,
-    private categoryService:CategoryService,fb: FormBuilder,private router:Router) {
-
-      this.EditForm = fb.group(
-        {
-          name: new FormControl('', [Validators.required]),
-          image: new FormControl('',[Validators.required]),
-        }
-      );
+    private categoryService:CategoryService,fb: FormBuilder,private router:Router,private route: ActivatedRoute) {
+     this.oldCategory= categoryService.getCategoryById(this.route.snapshot.paramMap.get('id')?.substring(1))
+     console.log(this.oldCategory,this.route.snapshot.paramMap.get('id')?.substring(1))
   }
+  
+onChange(event:any){
+  this.file = event.target.files[0]
+ }
+ 
   editCategory(): any {
-    if (this.EditForm.valid) {
-      this.error = '';
-      console.log(this.EditForm.value)
-      this.categoryService.editCategory(this.EditForm.value).subscribe({
-        next: (data: any) => {
-          console.log(data);
-          this.router.navigate(['/profile/1']);
-        },
-        error: (error: any) => {
-          this.error = error?.error;
-        },
-        complete: () => {
-          console.log('complete');
-        },
-      });
+    const formData = new FormData();
+    formData.append('image', this.file);
+    formData.append('name',(<HTMLInputElement>document.getElementById("name")).value);
+  this.categoryService.editCategory(formData,this.route.snapshot.paramMap.get('id')?.substring(1)).subscribe({
+            next: (data: any) => {
+              console.log(data);
+            },
+            error: (error: any) => {
+              this.error = error?.error;
+            },
+            complete: () => {
+              console.log('complete');
+            },
+          }
+        );
     }
   }
   
 
-}

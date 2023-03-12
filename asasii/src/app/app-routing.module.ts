@@ -17,26 +17,27 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { EditCategoryComponent } from './components/edit-category/edit-category.component';
 import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponentComponent },
   { path: 'shop', component: FilterComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'checkout', component: CheckoutComponent},
+  { path: 'checkout', component: CheckoutComponent,canActivate: [AuthGuard]},
   { path: 'detail/:id', component:ProductDetailsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
-  {path: 'profile/:id', component:ProfileComponent},
-  {path: 'add-product', component: AddProductComponent},
-  {path: 'edit-product/:id', component: EditProductComponent},
-  {path: 'add-category', component: AddCategoryComponent},
-  {path: 'edit-category/:id', component: EditCategoryComponent},
-  {path: 'admin-product', component: AdminProductComponent},
-  {path: 'admin-category', component: AdminCategoryComponent},
-  {path: 'admin-order', component: AdminOrderComponent},
-  {path: 'admin-user', component: AdminUserComponent},
-  {path: 'myprofile/:id', component: CustomerProfileComponent},
+  {path: 'profile/:id', component:ProfileComponent,canActivate: [AuthGuard]},
+  {path: 'add-product', component: AddProductComponent,canActivate: [AuthGuard]},
+  {path: 'edit-product/:id', component: EditProductComponent,canActivate: [AuthGuard]},
+  {path: 'add-category', component: AddCategoryComponent,canActivate: [AuthGuard]},
+  {path: 'edit-category/:id', component: EditCategoryComponent,canActivate: [AuthGuard]},
+  {path: 'admin-product', component: AdminProductComponent,canActivate: [AuthGuard]},
+  {path: 'admin-category', component: AdminCategoryComponent,canActivate: [AuthGuard]},
+  {path: 'admin-order', component: AdminOrderComponent,canActivate: [AuthGuard]},
+  {path: 'admin-user', component: AdminUserComponent,canActivate: [AuthGuard]},
+  {path: 'myprofile/:id', component: CustomerProfileComponent,canActivate: [AuthGuard]},
   
  
   
