@@ -1,15 +1,15 @@
 <div class="container-edit" id="container">
     <div class="form-container-edit edit-container">
-        <form action="post" (ngSubmit)="addProduct()" enctype="multipart/form-data">
+        <form action="post" (ngSubmit)="editProduct()">
             <input id="name" placeholder="Product Name"  formControlName="name" class="form-control"/>
             <input id="price" type="number" placeholder="Price"  formControlName="price" class="form-control"/>
             <input id="quantity" type="number"  placeholder="quantity"  formControlName="quantity" class="form-control"/>
-            <input id="image" type="file" placeholder="Add Image"  formControlName="image" class="form-control" (change)="onChange($event)" />
+            <input id="image" type="file" placeholder="Add Image"  formControlName="image" class="form-control" (change)="onChange($event)"/>
             <input id="description" placeholder="Product Description"  formControlName="description" class="form-control"/>
             <input id="Additional_info"  placeholder="Additional_info in form of key and value"  formControlName="Additional_info" class="form-control"/>
             <input id="colors"  placeholder="colors in form of array of strings"  formControlName="colors" class="form-control"/>
             <input id="category_name" type="select"  placeholder="category name"  formControlName="category_name" class="form-control"/>
-            <button type="submit">Add Product</button>
+            <button type="submit">Edit Product</button>
         </form>
     </div>
 

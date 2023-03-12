@@ -22,10 +22,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { AdminProductComponent } from './admin-product/admin-product.component';
-import { AdminCategoryComponent } from './admin-category/admin-category.component';
-import { AdminOrderComponent } from './admin-order/admin-order.component';
-import { AdminUserComponent } from './admin-user/admin-user.component';
+import { AdminProductComponent } from './components/admin-product/admin-product.component';
+import { AdminCategoryComponent } from './components/admin-category/admin-category.component';
+import { AdminOrderComponent } from './components/admin-order/admin-order.component';
+import { AdminUserComponent } from './components/admin-user/admin-user.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { EditCategoryComponent } from './components/edit-category/edit-category.component';
+import { AddCategoryComponent } from './components/add-category/add-category.component';
+import { CustomerProfileComponent } from './components/customer-profile/customer-profile.component';
+
 
 
 @NgModule({
@@ -49,8 +54,11 @@ import { AdminUserComponent } from './admin-user/admin-user.component';
     AdminProductComponent,
     AdminCategoryComponent,
     AdminOrderComponent,
-    AdminUserComponent
-  
+    AdminUserComponent,
+    EditProductComponent,
+    EditCategoryComponent,
+    AddCategoryComponent,
+    CustomerProfileComponent
 
   ],
   imports: [

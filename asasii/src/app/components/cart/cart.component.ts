@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CartLine } from 'src/app/interfaces/cart-line';
 import { NgModule } from '@angular/core';
 import { CartTableComponent } from '../cart-table/cart-table.component';
+import { StorageService } from 'src/app/services/storage.service';
 
 
 @Component({
@@ -10,22 +11,21 @@ import { CartTableComponent } from '../cart-table/cart-table.component';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
-cartItems: any[] =[]
-constructor() {
-  // Load cart items from local storage
-  const cartItemsString = localStorage.getItem('cartItems');
-  this.cartItems = cartItemsString ? JSON.parse(cartItemsString) : [];
-}
+  constructor(private storageService: StorageService) {
+    this.cartLines = storageService.getCartLines();
+  }
+  cartLines: CartLine[] = [];
 
-// Add an item to the cart
-addItem(item: any) {
-  this.cartItems.push(item);
-  localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
-}
-
-// Remove an item from the cart
-removeItem(index: number) {
-  this.cartItems.splice(index, 1);
-  localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
-}
+  getTotal(): number {
+    return this.getShipping() + this.getSubTotal();
+  }
+  getSubTotal(): number {
+    return this.cartLines
+      .map((x) => x.price * x.quantity)
+      .reduce((a, v) => (a += v), 0);
+  }
+  getShipping(): number {
+    return (
+      this.cartLines.map((x) => x.quantity).reduce((a, v) => (a += v), 0) * 2
+    );}
 }

@@ -1,5 +1,5 @@
 # Asasi
-- Asasi is a multi-vendor furniture store where website visitors can buy or sell either new or used furniture.
+- Asasi is a furniture store where website visitors can buy any furniture.
 ## About the process
 - using the Agile methodology to develop the web application through:
    -creating a refined backlog that includes user stories
@@ -8,4 +8,14 @@
    - daily scrum meetings for followups
    - weekly sprint review meeting
 - We use the Jira tool to help facilitate the process.
-- you can find all the website features in the product backlog at https://docs.google.com/spreadsheets/d/1tk55m4Lun-POx8hr4dw_qf2V5eEDEisNR56wCKTvXE8/edit?usp=sharing
+## website features
+- Customer:
+   - can create a new account on the website.
+   - can login or signout.
+   - can find all the products we offer categorized and searchable.
+   - can add products to the cart.
+   - can checkout.
+- Admin:
+   - can see all the categories and products in the system.
+   - can add, edit, or delete products.
+   - can add, edit, or delete categories.

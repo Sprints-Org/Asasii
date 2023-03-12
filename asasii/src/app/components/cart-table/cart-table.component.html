@@ -11,7 +11,7 @@
   
     <tr *ngFor="let item of CartLines; let i = index">
         <td class="productDetailsCart" *ngFor="let item of CartLines; let i = index">
-          <!--<img src="../../../assets/images/{{item.image}}" alt="" class="productImageCart"> --> 
+          <img src="{{getproductImage()}}{{item.product.image}}"alt="" class="productImageCart">
            {{item.product}}</td>
         <td>{{item.price}}</td>
         <td class="quantityCart"><button>{{item.quantity}}</button></td>

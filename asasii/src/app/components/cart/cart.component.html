@@ -1,35 +1,28 @@
-<div class="main_title" style="margin-bottom: 5rem;">
-    <img src="../../../assets/images/shop-main-rec.png"alt=""/>
-    <div class="text-container">
-      <div class="logo"><img src="../../../assets/images/logo.png" alt=""/></div>
-      <p class="shop_title">Cart</p>
-      <div class="home_arrow">
-        <p class="home">Home</p>
-        <span><i class="fa-solid fa-chevron-right"></i></span>
-        <p class="shop" style="font-weight: 300;">Cart</p>
-      </div>
-    </div>
-  </div>
-
+<div class=" subHeader">
+  <img src="../../../assets/images/shop-main-rec.png" alt="" class="subHeaderImage">
+<div class="logo">
+  <img src="../../../assets/images/logo.png" alt="">
+  <h1>Cart</h1>
+</div>
+<div class="path">
+  <h3>Home</h3>
+  <span><i class="fa-solid fa-chevron-right"></i> </span>
+  <h4>Cart</h4>
+</div>
 <!-- Cart Start -->
 
 <div class="cartDetails"> 
 <div class="cartLine" >
-<app-cart-table></app-cart-table>
+<app-cart-table [CartLines]="cartLines"> </app-cart-table>
   </div>
   <div class="cartSummary">
-    <h1>Cart Totals</h1>
-   <div class="subtotal">
-       <h3>SubTotal</h3>
-       <h4>Rs. 250,000.00</h4>
-   </div>
-   <div class="total">
-       <h3>Total</h3>
-       <h4>Rs. 250,000.00</h4>
+    <app-cart-total  [subTotal]="getSubTotal()"
+    [shipping]="getShipping()"
+    [total]="getTotal()"></app-cart-total>
    </div>
 <button>Check Out</button>
 
  </div>
-</div>
+
 
 <app-features></app-features>

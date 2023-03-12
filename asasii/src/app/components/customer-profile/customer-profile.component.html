@@ -1,0 +1,23 @@
+
+<div class="container" id="container">
+
+    <div class="form-container user-profile-container">
+        <form action="post"  [formGroup]="editForm" (ngSubmit)="edit()">
+            <input name="firstName" placeholder="First Name" formControlName="firstName" class="form-control" />
+            <input name="lastName" placeholder="Last Name" formControlName="lastName" class="form-control"/>
+            <input name="email" type="email" placeholder="Email" formControlName="email" class="form-control"/>
+            <input name="password" type="password" placeholder="Password" formControlName="password" class="form-control"/>
+
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <h1>Your Profile</h1>
+                manage your personal details 
+            </div>
+        </div>
+    </div>
+</div>

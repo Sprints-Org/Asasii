@@ -27,8 +27,12 @@ export class StorageService {
       if (ix >= 0) {
         cartLines[ix].quantity += 1;
       } else {
-        let cartLine = new CartLine(p)
-        cartLines.push(cartLine);
+       
+        cartLines.push({
+          price: p.price,
+          product: p,
+          quantity: 1,
+        })
       }
     });
     return cartLines;
