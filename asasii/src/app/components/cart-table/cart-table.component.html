@@ -10,12 +10,15 @@
     </tr>
   
     <tr *ngFor="let item of CartLines; let i = index">
-        <td class="productDetailsCart" *ngFor="let item of CartLines; let i = index">
-          <img src="{{getproductImage()}}{{item.product.image}}"alt="" class="productImageCart">
-           {{item.product}}</td>
-        <td>{{item.price}}</td>
-        <td class="quantityCart"><button>{{item.quantity}}</button></td>
-        <td>{{item.price*item.quantity}}</td>
+        <td class="productDetailsCart">
+          <img src={{getproductImage(item.product.image)}} alt="" class="productImageCart">
+          {{item.product.name}}
+        </td>
+        <td>{{item.product.price}}</td>
+        <td class="quantityCart">
+          <button>{{item.quantity}}</button>
+        </td>
+        <td>{{item.product.price*item.quantity}}</td>
         <td class="deleteCartLine" (click)="remove(i)"><i class="fa-solid fa-trash"></i></td>
       </tr>
   

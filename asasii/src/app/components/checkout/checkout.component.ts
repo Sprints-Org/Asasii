@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 import { Router } from '@angular/router';
+import { CartLine } from 'src/app/interfaces/cart-line';
 import { Orders } from 'src/app/interfaces/orders';
 import { AuthService } from 'src/app/services/auth.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
+import { StorageService } from 'src/app/services/storage.service';
 // import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
@@ -17,11 +19,14 @@ export class CheckoutComponent {
   token: string ='';
   country='';
   checkOutForm:FormGroup;
+  cartLines: CartLine[] = [];
 
   constructor(
-    // private storageService: StorageService,
+    private storageService: StorageService,
     private authService:AuthService,private router:Router, 
     private checkOutService:CheckoutService,fb: FormBuilder) {
+
+      this.cartLines = storageService.getCartLines();
 
       this.checkOutForm = fb.group(
         {
@@ -49,14 +54,13 @@ export class CheckoutComponent {
     if (this.checkOutForm.valid) {
 
       this.error = '';
-      // this.token=this.authService.getToken()
-      // let shipping= this.getShipping()
-      // let total = this.getTotal()
-      // let subTotal=this.getSubTotal()
+      //this.token=this.authService.getToken()
+      let shipping= this.getShipping()
+      let total = this.getTotal()
+      let subTotal=this.getSubTotal()
       let sub_total=150;
       let status="cash";
-      let shipping=50;
-      let total=200;
+
       
       
       let shipping_info=this.checkOutForm.value
@@ -85,15 +89,17 @@ export class CheckoutComponent {
     }
   }
 
-
-  // getTotal(): number {
-  //   return this.cart.getTotal();
-  // }
-  // getSubTotal(): number {
-  //   return this.cart.getSubTotal();
-  // }
-  // getShipping(): number {
-  //   return this.cart.getShipping()
-  // }
+  getTotal(): number {
+    return this.getShipping() + this.getSubTotal();
+  }
+  getSubTotal(): number {
+    return this.cartLines
+      .map((x) => x.price * x.quantity)
+      .reduce((a, v) => (a += v), 0);
+  }
+  getShipping(): number {
+    return (
+      this.cartLines.map((x) => x.quantity).reduce((a, v) => (a += v), 0) * 2
+    );}
 
 }

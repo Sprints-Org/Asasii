@@ -19,7 +19,7 @@ export class CartTableComponent {
   this.CartLines.splice(i,1);
   this.storageService.save(this.CartLines);
 }
- getproductImage(){
-  return `${environment.imageUrl}products/`
+ getproductImage(image:string){
+  return `${environment.imageUrl}products/${image}`;
 }
 }

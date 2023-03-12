@@ -19,7 +19,7 @@ export class ProductDetailsComponent implements OnInit {
   product: Products = {} as Products;
   products: Products[] = [];
  quantity: number = 1;
-  constructor(private productService:ProductService, private route: ActivatedRoute,  private storageService: StorageService) { };
+  constructor(private productService:ProductService, private route: ActivatedRoute,private router:Router,  private storageService: StorageService) { };
  
   
   incQuantity() {
@@ -30,7 +30,8 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   addToCartWithQuantity() {
-    this.storageService.addProducts(this.product, this.quantity);
+    this.storageService.addProducts(this.products[0], this.quantity);
+    this.router.navigate(['/cart']);
   }
  
   ngOnInit() {

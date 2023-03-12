@@ -12,17 +12,16 @@
 <!-- Cart Start -->
 
 <div class="cartDetails"> 
-<div class="cartLine" >
-<app-cart-table [CartLines]="cartLines"> </app-cart-table>
-  </div>
-  <div class="cartSummary">
-    <app-cart-total  [subTotal]="getSubTotal()"
-    [shipping]="getShipping()"
-    [total]="getTotal()"></app-cart-total>
-   </div>
-<button>Check Out</button>
-
- </div>
+    <div class="cartLine" >
+        <app-cart-table [CartLines]="cartLines"> </app-cart-table>
+    </div>
+    <div class="cartSummary">
+        <app-cart-total  [subTotal]="getSubTotal()"
+        [shipping]="getShipping()"
+        [total]="getTotal()">
+        </app-cart-total>
+    </div>
+</div>
 
 
 <app-features></app-features>

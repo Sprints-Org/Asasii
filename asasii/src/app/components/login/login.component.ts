@@ -30,7 +30,8 @@ export class LoginComponent implements AfterViewInit {
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
+      password1: new FormControl('', [Validators.required]),
+      password2: new FormControl('', [Validators.required])
     });
 
     this.signinForm = fb.group({
@@ -65,7 +66,7 @@ export class LoginComponent implements AfterViewInit {
         next: (data: any) => {
           console.log(data);
           this.authService.saveLoginData(data);
-          this.router.navigate(['/profile/1']);
+          this.router.navigate(['/myprofile',data.userId]);
         },
         error: (error: any) => {
           this.error = error?.error;
