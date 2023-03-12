@@ -79,11 +79,11 @@
             </div>
             <div class="d-flex add-to-cart-container align-items-center mb-5">
                 <div class="d-flex quantity-container me-3 h-100">
-                    <button class="value-button d-flex justify-content-center align-items-center" id="decrease" value="Decrease Value">-</button>
+                    <button class="value-button d-flex justify-content-center align-items-center" id="decrease" value="Decrease Value" (click)="decQuantity()">-</button>
                     <input type="number" id="number" value="1" />
-                    <button class="value-button d-flex justify-content-center align-items-center" id="increase" value="Increase Value">+</button>
+                    <button class="value-button d-flex justify-content-center align-items-center" id="increase" value="Increase Value" (click)="incQuantity()">+</button>
                 </div>
-                <input class="add-to-cart-button me-3 h-100" type="submit" value="Add To Cart" />
+                <button class="add-to-cart-button me-3 h-100" type="submit" value="Add To Cart"(click)="addToCartWithQuantity()" >Add to cart</button>
                 <div class="like text-center">
                     <i class="fa-regular fa-heart fa-2xl"></i>
                 </div>

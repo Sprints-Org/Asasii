@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app-comonent/app.component';
 import { HeaderComponent } from './components/layouts/header/header.component';
@@ -21,7 +21,8 @@ import { CartTotalComponent } from './components/cart-total/cart-total.component
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 // search module
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AdminProductComponent } from './components/admin-product/admin-product.component';
 import { AdminCategoryComponent } from './components/admin-category/admin-category.component';
 import { AdminOrderComponent } from './components/admin-order/admin-order.component';
@@ -66,8 +67,9 @@ import { CustomerProfileComponent } from './components/customer-profile/customer
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule,
-    ReactiveFormsModule
+    Ng2SearchPipeModule ,
+    ReactiveFormsModule,
+    RouterModule
 
   ],
   providers: [],

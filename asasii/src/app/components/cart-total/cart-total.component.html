@@ -2,12 +2,12 @@
     <h1>Cart Totals</h1>
    <div class="subtotal">
        <h3>SubTotal</h3>
-       <h4>Rs. 250,000.00</h4>
+       <h4>{{ subTotal }}</h4>
    </div>
    <div class="total">
        <h3>Total</h3>
-       <h4>Rs. 250,000.00</h4>
+       <h4>{{total}}</h4>
    </div>
-<button>Check Out</button>
+<button [routerLink]="['/checkout']">Check Out</button>
 
  </div>
