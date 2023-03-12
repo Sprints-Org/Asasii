@@ -17,9 +17,13 @@ export class CategoryService {
    return this.httpClient.get(`${environment.apiUrl}category/`);
     
   }
+  
+  getCategoryById(id:any):any{
+    return this.httpClient.get(`${environment.apiUrl}category/${id}`);
+  }
   addNewCategory(category:any):any{
     let headers= new HttpHeaders( {'Authorization': 'Bearer ' +  this.auth.getToken()});
-    return this.httpClient.post(`${environment.apiUrl}category` ,category , { headers: headers });
+    return this.httpClient.post(`${environment.apiUrl}category` , category , { headers: headers });
     }
   editCategory(category:any,ID:any):any{
     let headers= new HttpHeaders( {'Authorization': 'Bearer ' +  this.auth.getToken()});

@@ -12,42 +12,15 @@ import { CategoryService } from 'src/app/services/category.service';
 export class AddCategoryComponent {
   error: string = '';
   token: string ='';
-  // AddForm:FormGroup;
   file:any;
 
   constructor(
     // private storageService: StorageService,
     private authService:AuthService,
-    private categoryService:CategoryService,fb: FormBuilder,private router:Router) {
-
-      // this.AddForm = fb.group(
-      //   {
-      //     name: new FormControl('', [Validators.required]),
-      //     image: new FormControl('',[Validators.required]),
-      //   }
-      // );
+    private categoryService:CategoryService,private fb: FormBuilder,private router:Router) {
   }
-  // addCategory(): any {
-  //   // if (this.AddForm.valid) {
-  //   //   this.error = '';
-  //   //   console.log(this.AddForm.value)
-  //   //   this.categoryService.addNewCategory(this.AddForm.value)
-  //   //   .subscribe({
-  //   //     next: (data: any) => {
-  //   //       console.log(data);
-  //   //       this.router.navigate(['/profile/1']);
-  //   //     },
-  //   //     error: (error: any) => {
-  //   //       this.error = error?.error;
-  //   //     },
-  //   //     complete: () => {
-  //   //       console.log('complete');
-  //   //     },
-  //   //   }
-  //   //   );
-  //   // }
-    
-  // }
+  ngOnInit() {
+  }
 
 
 onChange(event:any){
@@ -55,7 +28,10 @@ onChange(event:any){
 }
 
 addCategory():any{
-  this.categoryService.addNewCategory(this.file).subscribe({
+  const formData = new FormData();
+    formData.append('image', this.file);
+    formData.append('name',(<HTMLInputElement>document.getElementById("name")).value);
+  this.categoryService.addNewCategory(formData).subscribe({
             next: (data: any) => {
               console.log(data);
             },
@@ -68,10 +44,7 @@ addCategory():any{
           }
         );
 }
-// var test = {test:"test"}
-//   const formData = new FormData();
-//   formData.append('name', JSON.stringify());
-//   formData.append('file', file, file.name);
+
 
 
 }
