@@ -1,0 +1,19 @@
+<div class="container-edit" id="container">
+    <div class="form-container-edit edit-container">
+        <form action="post" (ngSubmit)="addCategory()"  enctype="multipart/form-data">
+            <input name="name" placeholder="Category Name" class="form-control" id="name"/>
+            <input name="image" type="file" placeholder="Add Image" class="form-control" id="image" (change)="onChange($event)" />
+            <button type="submit">Add Category</button>
+        </form>
+    </div>
+
+    <div class="overlay-container-edit">
+        <div class="overlay-add">
+            <div class="overlay-panel overlay-right">
+                <h1>Hello Admin!</h1>
+                Enter the Category information
+            </div>
+        </div>
+    </div>
+</div>
+<script rel="jsvascript" href="../../../assets/js/add-product.js"></script>

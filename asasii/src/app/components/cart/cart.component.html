@@ -1,0 +1,27 @@
+<div class=" subHeader">
+  <img src="../../../assets/images/shop-main-rec.png" alt="" class="subHeaderImage">
+<div class="logo">
+  <img src="../../../assets/images/logo.png" alt="">
+  <h1>Cart</h1>
+</div>
+<div class="path">
+  <h3>Home</h3>
+  <span><i class="fa-solid fa-chevron-right"></i> </span>
+  <h4>Cart</h4>
+</div>
+<!-- Cart Start -->
+
+<div class="cartDetails"> 
+    <div class="cartLine" >
+        <app-cart-table [CartLines]="cartLines"> </app-cart-table>
+    </div>
+    <div class="cartSummary">
+        <app-cart-total  [subTotal]="getSubTotal()"
+        [shipping]="getShipping()"
+        [total]="getTotal()">
+        </app-cart-total>
+    </div>
+</div>
+
+
+<app-features></app-features>

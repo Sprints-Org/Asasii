@@ -1,0 +1,37 @@
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="post"  [formGroup]="signupForm" (ngSubmit)="signup()">
+            <h1>Create Account</h1>
+            <input name="firstName" placeholder="First Name" formControlName="firstName" class="form-control" />
+            <input name="lastName" placeholder="Last Name" formControlName="lastName" class="form-control"/>
+            <input name="email" type="email" placeholder="Email" formControlName="email" class="form-control"/>
+            <input name="password1" type="password" placeholder="Password" formControlName="password1" class="form-control"/>
+            <input name="password2" type="password" placeholder="Confirm Password" formControlName="password2" class="form-control"/>
+            <button type="submit">sign up</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="post"  [formGroup]="signinForm" (ngSubmit)="signin()">
+            <h1>Sign in</h1>
+             <input name="email" type="email" placeholder="Email" formControlName="email" class="form-control"/>
+            <input name="password" type="password" placeholder="Password" formControlName="password" class="form-control"/>
+            <button type="submit">sign in</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                To keep connected with us please login with your personal info
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello!</h1>
+                Enter your personal details and start journey with us
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 

@@ -1,0 +1,103 @@
+   <!--hero section-->
+   <div class="container-fluid" style="background-color: #fbebb5">
+    <div class="row align-items-center justify-content-evenly">
+      <div class="col-lg-3 col-md-12" >
+        <h1>Rocket single seater</h1>
+        <div>
+          <a
+            type="button"
+            class="btn a-bottom-border"
+            routerLink="/shop"
+            >Shop Now</a
+          >
+        </div>
+      </div>
+
+      <img
+        src="../../.../../../assets/images/index/bffe1c6f490b48bea0d077f74200bdb9.png"
+        class="col-lg-9 col-md-12"
+        style="width: 50rem; height: 50rem;"
+      />
+    </div>
+  </div>
+  <!--categories-->
+  <div class="container-fluid" style="background-color: #faf4f4">
+    <div class="row align-items-center justify-content-evenly" >
+      <div class="col-lg-4 col-md-8">
+        <div>
+          <img src="{{getCategoryImage()}}{{categories[0].image}}" style="width: 30rem; height: 30rem;" />
+        </div>
+        <div>
+          <h4>{{categories[0].name}}</h4>
+
+          <div>
+            <a
+              type="button"
+              class="btn a-bottom-border"
+              routerLink="/shop"
+              >View More</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-8">
+        <div>
+          <img src="{{getCategoryImage()}}{{categories[1].image}}" style="width: 30rem; height: 30rem;"/>
+        </div>
+        <div>
+          <h4>{{categories[1].name}}</h4>
+          <div>
+            <a
+              type="button"
+              class="btn a-bottom-border"
+              routerLink="/shop"
+              >View More</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--new arrivals-->
+  <div class="container-fluid" style="background-color: #ffffff">
+    <div class="row align-items-center justify-content-evenly">
+      <img
+        src="{{getproductImage()}}{{products.slice(-1)[0].image}}"
+        class="col-lg-7 col-md-12"
+        style="width: 50rem; height: 50rem;"
+      />
+      <div class="col-lg-5 col-md-12">
+        <p class="text-center">New Arrivals</p>
+        <h2 class="text-center">{{products.slice(-1)[0].name}}</h2>
+        <div class="py-5 text-center">
+          <a type="button" class="btn border-dark"
+          routerLink="/detail/{{product._id}}"
+            >Order Now</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--recommended products-->
+  <div class="container-fluid" style="background-color: #fff9e5">
+    <div class="row py-5">
+      <h2 class="text-center">Top Products </h2>
+      <p class="text-muted text-center py-1">
+        Find a bright ideal to suit your taste with our great selection of
+        suspension, floor and table lights.
+      </p>
+    </div> 
+    <div class="row align-items-center justify-content-evenly py-5">
+      <div class="col-lg-2 col-md-5 mb-3 product-card" *ngFor="let p of products.slice(0,4); let i = index;">
+        <app-product [product]="p"></app-product>
+      </div>
+    </div>
+    <div
+      class="py-3 text-center row align-items-center justify-content-center"
+    >
+      <a type="button" class="btn col-1 a-bottom-border" routerLink="/shop"
+        >View More</a
+      >
+    </div>
+  </div>
+

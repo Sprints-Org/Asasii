@@ -1,0 +1,83 @@
+<div class=" subHeader">
+  <img src="../../../assets/images/image.jpg" alt="" class="subHeaderImage">
+<div class="logo">
+  <img src="../../../assets/images/logo.png" alt="">
+  <h1 id="checkout-title">Shop</h1>
+</div>
+<div class="path">
+  <h3>Home</h3>
+  <span><i class="fa-solid fa-chevron-right"></i> </span>
+  <h4>Shop</h4>
+</div>
+</div>
+  <nav
+    class="navbar navbar-expand-lg bg-light"
+    style="background-color: rgb(238, 233, 233) !important"
+  >
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <i class="bi bi-sliders"></i>filter
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark"> 
+                <li *ngFor="let c of categories; let i = index" ><a class="dropdown-item" (click)="getProductByCategory(c.name)">{{c.name}}</a></li> 
+              </ul> 
+          </li>
+          <li class="nav-item">
+            <a><i class="bi bi-three-dots-vertical"></i></a>
+          </li>
+          <li class="nav-item">
+            <a><i class="bi bi-view-list"></i></a>
+          </li>
+
+          <li class="nav-item">
+            <p class="results_number">showing 1-16 of 32 results</p>
+          </li>
+          <li>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products" [(ngModel)]="name">
+                
+            </div>
+          </li>
+        </ul>
+        <div class="left-nav-side">
+         <p>show</p> 
+        <div class="number-box">
+          <span>1</span>
+        </div>
+        <p>sort by</p> 
+        <div class="sort-box">
+          <span>default</span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="product-menu" style="margin-bottom: 15rem ;">
+    <div class="product" *ngFor="let p of products |filter:name">
+      <div  class="col-lg-2 col-md-5 mb-3 product-card">
+        <app-product [product]="p"></app-product>
+      </div>
+    </div>
+    
+  </div>
+  <div class="paymentFeatures">
+    <div >
+        <h2>Free Delivery</h2>
+        <p> For all orders over $50,
+             consectetur adipim scing elit</p>
+    </div>
+    <div>
+        <h2>90 Days Return</h2>
+        <p> If goods have problems, 
+            consectetur adipim scing elit</p>
+    </div>
+    <div> 
+        <h2>Secure Payment</h2>
+        <p> 100% secure payment,
+             consectetur adipim scing elit</p>
+    </div>
+</div>

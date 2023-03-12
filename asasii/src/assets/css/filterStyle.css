@@ -1,0 +1,196 @@
+/* Apply a CSS reset to remove default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+  }
+  
+  /* Set font properties */
+  body {
+    font-family: 'Poppins', sans-serif;
+  
+  }
+  
+  /* Style the main_title section */
+  .main_title {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 35vh; position: relative; top:3vh ;
+  }
+  
+  /* Style the background image */
+  .main_title> img {
+    width: 100%;
+    height: 100%;
+    filter: blur(3px);
+  }
+  
+  /* Center the logo, shop_title, and home_arrow within the text container */
+  .text-container {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    z-index: 1; row-gap: 0;
+   
+  }
+  
+  .logo {
+    width: 77px;
+    height: 77px;
+    margin-bottom: 5%; ;
+  }
+  
+  .shop_title {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 72px;
+    text-transform: uppercase; margin:0
+  }
+  
+  .home_arrow {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+  }
+  
+  .home_arrow p, .home_arrow i {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+.bi-chevron-right{margin-bottom: 12px; margin-left:2px;}
+  
+  .shop {
+    margin-left: 8px;
+    font-weight: 300;
+  }
+  
+  .home {
+    font-weight: 500;
+  }
+  
+  /* Add media queries for smaller screens */
+  @media only screen and (max-width: 37em) {
+    .main_title {
+      height: auto;
+    }
+  
+    .main_title img {
+      height: 300px;
+    }
+  
+    .text-container {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  
+    .logo {
+      margin-bottom: 16px;
+      width: 50%;
+      height: 1vh;
+    }
+  
+    .shop_title {
+     width: 20%;
+      line-height: 48px;
+    }
+  
+    .home_arrow p, .home_arrow i {
+      font-size: 14px;
+    }
+  
+    .fa-angle-right {
+      font-size: 20px;
+    }
+    .product-menu{
+      display: flex;
+      flex-wrap: wrap;
+      
+    }
+  }
+.navbar-expand-lg{ margin-top:10vh;
+  }
+
+.bi-three-dots-vertical{margin-top: 40vh;}
+.nav-item .bi-view-list,.nav-item .bi-three-dots-vertical {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 50%;
+ 
+
+}
+
+.nav-item{margin-left: 5vh;}
+
+.results_number {
+  margin-top: 4%;
+  border-left: 2px solid grey;
+  padding-left: 3vh; /* Add padding to move the text away from the vertical line */
+  color: grey;
+}
+
+.left-nav-side {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* add this to push the left-nav-side to the right side of the navbar */
+
+}
+
+.left-nav-side p {
+  margin-right: 10px;
+  /* margin-top: 1vh; */
+}
+
+.number-box {
+  width: 5vh;
+  background-color: white;
+  text-align: center;
+  margin-right: 10px; /* add margin-right to create a gap between sort by and number box */
+
+}
+
+.number-box span {
+  color: grey;
+  text-align: center;
+}
+
+.sort-box {
+  width: 12vh;
+  background-color: white;
+  text-align: center;
+  margin-right: 3vh;
+}
+
+.sort-box span {
+  color: grey;
+  text-align: center;
+
+}
+
+
+.product-menu{ display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+justify-items: center;
+align-items: center;
+margin-top: 5%;
+margin-left: 10vh;
+margin-right: 10vh;
+gap: 2%;
+row-gap: 10%;
+}
+.product-menu img{width:30vh;
+height: 30vh; }
+
+
+.product-price{ 
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: normal;
+  color: black; 
+}
+.product-name{font-weight: 400; font-size: 16px; text-align: left;}
+
